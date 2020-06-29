@@ -5,7 +5,7 @@ import './App.css';
 class App extends React.Component {
   constructor(props){
     super(props)
-    this.state = {data: "DATA"};
+    this.state = {datalist: [1,2,3,4,5,6,8]};
   }
 
   render() {
@@ -13,9 +13,12 @@ class App extends React.Component {
       <div className="App">
         <h1>
           Hello world, IM AN APP COMPONENT!
-
-          {this.state.data}
       </h1>
+      <ul>
+        {this.state.datalist.map(element =>{
+            return <li>{element}</li>
+          })}
+      </ul>
       </div>
     );
   }
