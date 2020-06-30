@@ -9,8 +9,10 @@ class App extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
 
-  handleClick(){
-    this.setState({datalist: ['i', 'changed', 'it']})
+  handleClick(e){
+    console.log(e)
+    const earr = e.target.id.split(' ')
+    this.setState({datalist: earr})
   }
 
 
@@ -21,7 +23,7 @@ class App extends React.Component {
           Hello world, IM passing props!
       </h1>
       <h2>
-        <input type="button" onClick={this.handleClick}/>
+        <input type="button" id='the only button' onClick={this.handleClick}/>
       </h2>
       <ul>
         {this.state.datalist.map(element =>{
