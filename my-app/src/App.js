@@ -5,18 +5,18 @@ import './App.css';
 class App extends React.Component {
   constructor(props){
     super(props)
-    this.state = {datalist: [1,2,3,4,5,6,8]};
+    this.state = {datalist: props.datalist};
   }
 
   render() {
     return (
       <div className="App">
         <h1>
-          Hello world, IM AN APP COMPONENT!
+          Hello world, IM passing props!
       </h1>
       <ul>
         {this.state.datalist.map(element =>{
-            return <li>{element}</li>
+            return <li> {element} </li>
           })}
       </ul>
       </div>
